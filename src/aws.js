@@ -11,7 +11,6 @@ function buildUserDataScript(githubRegistrationToken, label) {
       '#!/bin/bash',
       `cd "${config.input.runnerHomeDir}"`,
       'export RUNNER_ALLOW_RUNASROOT=1',
-      'export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1',
       `./config.sh --url https://github.com/${config.githubContext.owner}/${config.githubContext.repo} --token ${githubRegistrationToken} --labels ${label}`,
       './run.sh',
     ];
